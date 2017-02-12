@@ -1,1 +1,0 @@
-import {Component} from "@angular/core";@Component({    selector: "header-menu",    templateUrl: 'app/components/header/header-menu.component.html'})export class HeaderMenu {}
