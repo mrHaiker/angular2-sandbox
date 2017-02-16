@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header-menu.component.html',
   styleUrls: ['./header-menu.component.scss']
 })
+
 export class HeaderMenuComponent implements OnInit {
   list: string[];
 
@@ -15,7 +16,12 @@ export class HeaderMenuComponent implements OnInit {
       'Meizu',
       'LG',
       'Xiomi',
+      'Nokia'
     ]
+  }
+
+  selectTab(index: number) {
+    console.log(this.list[index]);
   }
 
   ngOnInit() {

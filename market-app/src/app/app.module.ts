@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
+import { DetailPageComponent } from './detail-page/detail-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    DetailPageComponent
   ],
   imports: [
     BrowserModule,
