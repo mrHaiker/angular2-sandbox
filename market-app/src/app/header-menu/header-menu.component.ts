@@ -20,10 +20,6 @@ export class HeaderMenuComponent implements OnInit {
     ]
   }
 
-  selectTab(index: number) {
-    console.log(this.list[index]);
-  }
-
   ngOnInit() {
   }
 

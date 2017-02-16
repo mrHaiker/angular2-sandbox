@@ -1,0 +1,19 @@
+{
+  "samsung": [
+    {
+      "name": "Galaxy S5",
+      "description": "Test msg",
+      "price": 349.99
+    },
+    {
+      "name": "Galaxy S6",
+      "description": "Test msg",
+      "price": 499.99
+    }
+  ],
+  "apple": {},
+  "meizu": {},
+  "lg": {},
+  "xiomi": {},
+  "nokia": {}
+}

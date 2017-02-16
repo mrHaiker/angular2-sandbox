@@ -1,7 +1,6 @@
 <ul class="menu-panel">
   <li class="menu-panel__elem"
       *ngFor="let elem of list; let i = index;"
-      (click)="selectTab(i)"
       [routerLink]="['/detail', elem.toLowerCase()]"
       [routerLinkActive]="['active']"
   >
