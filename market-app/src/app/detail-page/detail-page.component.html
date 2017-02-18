@@ -3,6 +3,10 @@
   <h3 class="detail-page__title">{{ page }}</h3>
   <div class="detail-page__hr"></div>
 
+  <div *ngIf="!models">
+    <app-inner-loader></app-inner-loader>
+  </div>
+
   <div class="detail-page__about-product about-product" *ngFor="let model of models">
     <div class="row">
       <div class="col-sm">
