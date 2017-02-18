@@ -11,7 +11,7 @@ export interface IPhones {
 
 @Injectable()
 export class PhoneService {
-  private apiUrl = '/app/phones.json';
+  private apiUrl = 'api/phones';
   phones: string[] = [];
 
   constructor(
@@ -21,7 +21,7 @@ export class PhoneService {
   getPhones(): Promise<IPhones> {
     return this.http.get(this.apiUrl)
       .toPromise()
-      .then(res => res.json())
+      .then(res => res.json().data )
       .then(phones => this.phones = phones)
       .catch(this.handleError);
   }
