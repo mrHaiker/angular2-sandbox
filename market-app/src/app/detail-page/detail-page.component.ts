@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {PhoneService} from "../_services/phone.service";
+import {PhoneService, IPhones} from "../_services/phone.service";
 
 @Component({
   selector: 'app-detail-page',
@@ -9,27 +9,30 @@ import {PhoneService} from "../_services/phone.service";
   providers: [PhoneService],
 })
 
-
 export class DetailPageComponent implements OnInit {
   page:string;
+  models: any;
 
   constructor(
     private route: ActivatedRoute,
-    private phoneService: PhoneService
+    private phoneService: PhoneService,
   ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.page = params['elem'];
+      this.getCurrentPhoneData(this.page);
     });
-
-    this.getPhones().then(res => {
-      console.log(res);
-    })
   }
 
   getPhones() {
     return this.phoneService.getPhones();
+  }
+
+  getCurrentPhoneData(mark) {
+    this.getPhones().then(res => {
+      this.models = res[mark] as IPhones;
+    });
   }
 
 }

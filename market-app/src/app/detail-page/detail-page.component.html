@@ -3,11 +3,22 @@
   <h3 class="detail-page__title">{{ page }}</h3>
   <div class="detail-page__hr"></div>
 
-  <div class="detail-page__about-product about-product">
-    <div class="about-product__img"></div>
-    <p class="about-product__title"></p>
-    <p class="about-product__description"></p>
-    <div class="about-product__navigation"></div>
+  <div class="detail-page__about-product about-product" *ngFor="let model of models">
+    <div class="row">
+      <div class="col-sm">
+        <div class="about-product__img-wrap">
+      <img class="about-product__img" src="{{ model.images }}" alt="{{ model.name }}">
+    </div>
+      </div>
+      <div class="col-sm">
+        <p class="about-product__title">{{ model.name }}</p>
+        <p class="about-product__description">{{ model.description }}</p>
+        <div class="about-product__navigation"></div>
+      </div>
+    </div>
+
+
   </div>
 
+  {{ model | json }}
 </div>

@@ -12,3 +12,28 @@
     margin-top: 10px;
   }
 }
+
+.about-product {
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-bottom: 1px solid #dedede;
+  &__img {
+    width: 300px;
+    &-wrap {
+      flex: 1;
+      margin-right: 15px;
+    }
+  }
+  &__title {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #333333;
+    font-weight: bold;
+  }
+  &__description {
+    font-size: 14px;
+    color: #333333;
+  }
+}

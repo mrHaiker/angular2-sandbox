@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise'
 
-interface IPhones {
+export interface IPhones {
+  images: string[],
   name: string,
   description: string,
   price: number
