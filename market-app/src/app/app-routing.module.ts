@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     children: []
   },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'detail/:elem', component: DetailPageComponent }
 ];
 

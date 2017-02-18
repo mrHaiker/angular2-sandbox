@@ -1,27 +1,21 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Http} from "@angular/http";
-import 'rxjs/add/operator/toPromise';
+import {PhoneService} from "../_services/phone.service";
 
 @Component({
   selector: 'app-detail-page',
   templateUrl: './detail-page.component.html',
-  styleUrls: ['./detail-page.component.scss']
+  styleUrls: ['./detail-page.component.scss'],
+  providers: [PhoneService],
 })
 
-interface IPhones {
-  name: string,
-  description: string,
-  price: number
-}
 
 export class DetailPageComponent implements OnInit {
   page:string;
-  phoneData: IPhones[];
 
   constructor(
     private route: ActivatedRoute,
-    private http: Http
+    private phoneService: PhoneService
   ) { }
 
   ngOnInit() {
@@ -29,15 +23,13 @@ export class DetailPageComponent implements OnInit {
       this.page = params['elem'];
     });
 
-    console.log(this.getPhones());
+    this.getPhones().then(res => {
+      console.log(res);
+    })
   }
-  //TODO: Find and import Promise module
-  getPhones(): Promise<IPhones[]> {
-    return this.http.get('./app/phones.json')
-      .toPromise()
-      .then(res => {
-         this.phoneData = res.json().data as IPhones[];
-      })
+
+  getPhones() {
+    return this.phoneService.getPhones();
   }
 
 }
