@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {DetailPageComponent} from "./detail-page/detail-page.component";
+import {ViewPhoneComponent} from "./view-phone/view-phone.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    children: []
-  },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'detail/:elem', component: DetailPageComponent }
+  { path: '', redirectTo: '/detail/samsung', pathMatch: 'full' },
+  { path: 'detail/:elem', component: DetailPageComponent },
+  { path: 'detail/:elem/view/:model', component: ViewPhoneComponent }
 ];
 
 @NgModule({

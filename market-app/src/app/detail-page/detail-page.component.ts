@@ -29,9 +29,9 @@ export class DetailPageComponent implements OnInit {
     return this.phoneService.getPhones();
   }
 
-  getCurrentPhoneData(mark) {
+  getCurrentPhoneData(brand) {
     this.getPhones().then(res => {
-      this.models = res[mark] as IPhones;
+      this.models = res[brand] as IPhones;
     });
   }
 

@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { InnerLoaderComponent } from './inner-loader/inner-loader.component';
+import { ViewPhoneComponent } from './view-phone/view-phone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderMenuComponent,
     DetailPageComponent,
-    InnerLoaderComponent
+    InnerLoaderComponent,
+    ViewPhoneComponent
   ],
   imports: [
     BrowserModule,

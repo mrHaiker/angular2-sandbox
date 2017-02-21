@@ -1,0 +1,23 @@
+.view {
+  &__title {
+    font-size: 22px;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+  }
+  &__description {
+    margin-top: 15px;
+  }
+  &__back {
+    margin-bottom: 15px;
+    .fa {
+      display: inline-block;
+      margin-right: 5px;
+    }
+  }
+  &__image {
+    width: 100%;
+  }
+}

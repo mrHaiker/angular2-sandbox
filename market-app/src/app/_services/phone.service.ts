@@ -15,11 +15,11 @@ export class PhoneService {
   phones: string[] = [];
 
   constructor(
-    private http: Http
+    private _http: Http
   ) {}
 
   getPhones(): Promise<IPhones> {
-    return this.http.get(this.apiUrl)
+    return this._http.get(this.apiUrl)
       .toPromise()
       .then(res => res.json().data )
       .then(phones => this.phones = phones)
