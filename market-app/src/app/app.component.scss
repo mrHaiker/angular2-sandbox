@@ -23,36 +23,7 @@
     }
   }
 }
-.top-nav {
-  display: flex;
-  flex: 1;
-  &__list {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    flex-direction: row;
-    margin: 0;
-    justify-content: flex-end;
-  }
-  &__elem {
-    align-self: center;
-    margin: 0 10px;
-    cursor: pointer;
-    text-transform: capitalize;
-    &_basket {
-      font-size: 24px;
-      color: coral;
-    }
-  }
-  &__icon {
-    &_plus {
-      font-size: 18px;
-      vertical-align: middle;
-      color: #444;
-      margin-right: 5px;
-    }
-  }
-}
+
 
 
 .main {

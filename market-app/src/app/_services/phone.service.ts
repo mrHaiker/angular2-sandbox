@@ -3,6 +3,7 @@ import { Http } from "@angular/http";
 import 'rxjs/add/operator/toPromise'
 
 export interface IPhones {
+  id: number,
   images: string[],
   name: string,
   description: string,

@@ -5,6 +5,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const phones = {
       "samsung": [
         {
+          "id": 15,
           "images": [
             "//cdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s5-g900f-1.jpg"
           ],
@@ -13,6 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "price": 349.99
         },
         {
+          "id": 16,
           "images": [
             "//www.samsung.com/uk/galaxys6/images/colours/galaxys6_black_v3.jpg"
           ],
@@ -21,6 +23,7 @@ export class InMemoryDataService implements InMemoryDbService {
           "price": 499.99
         },
         {
+          "id": 17,
           "images": [
             "//itblog.net.ua/wp-content/uploads/2016/11/galaxy-s7-unlocked-us.jpg"
           ],

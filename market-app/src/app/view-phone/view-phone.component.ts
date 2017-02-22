@@ -1,12 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PhoneService, IPhones} from "../_services/phone.service";
+
+interface IAddToBasket {
+  id: number
+}
 
 @Component({
   selector: 'app-view-phone',
   templateUrl: './view-phone.component.html',
   styleUrls: ['./view-phone.component.scss'],
-  providers: [PhoneService]
+  providers: [
+    PhoneService,
+  ]
 })
 
 export class ViewPhoneComponent implements OnInit {
@@ -17,7 +23,7 @@ export class ViewPhoneComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private phoneService: PhoneService,
+    private _phoneService: PhoneService,
   ) {}
 
   ngOnInit() {
@@ -29,7 +35,7 @@ export class ViewPhoneComponent implements OnInit {
   }
 
   getCurrData() {
-    this.phoneService.getPhones()
+    this._phoneService.getPhones()
       .then(res => {
         let brand = res[this.routeParams.elem] as IPhones[];
 
@@ -42,4 +48,10 @@ export class ViewPhoneComponent implements OnInit {
       })
   }
 
+  /**
+   * @param {Number} id
+   * */
+  addToBasket(id) {
+    // TODO: need add functional which will be add product in basket
+  }
 }

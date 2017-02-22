@@ -12,6 +12,9 @@ import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 import { InnerLoaderComponent } from './inner-loader/inner-loader.component';
 import { ViewPhoneComponent } from './view-phone/view-phone.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import {BasketService} from "./_services/basket.service";
+import {PhoneService} from "./_services/phone.service";
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { ViewPhoneComponent } from './view-phone/view-phone.component';
     HeaderMenuComponent,
     DetailPageComponent,
     InnerLoaderComponent,
-    ViewPhoneComponent
+    ViewPhoneComponent,
+    TopNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,10 @@ import { ViewPhoneComponent } from './view-phone/view-phone.component';
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [],
+  providers: [
+    BasketService,
+    PhoneService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

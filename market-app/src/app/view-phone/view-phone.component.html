@@ -19,7 +19,7 @@
       <div class="col-xs">
         <div class="btn-group pull-right clearfix">
           <div class="btn btn-secondary">{{ model.price | currency }}</div>
-          <div class="btn btn-success">+ Add to basket</div>
+          <div class="btn btn-success" (click)="addToBasket(model.id)">+ Add to basket</div>
         </div>
       </div>
     </div>
