@@ -1,20 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'todo-form',
   templateUrl: './todo-form.component.html',
   styleUrls: ['./todo-form.component.scss']
 })
-export class TodoFormComponent implements OnInit {
-  newTodoTitle: string = '';
+export class TodoFormComponent {
+  title: string = '';
+  @Output() add = new EventEmitter();
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  create() {
-
+  onSubmit() {
+    this.add.emit(this.title);
   }
 
 }

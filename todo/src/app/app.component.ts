@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Todo} from "./shared/todo";
+import {todos} from "./shared/data";
 
 @Component({
   selector: 'app-root',
@@ -8,4 +10,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title: string = 'Angular 2Do';
+  todos: Todo[] = todos;
+
+  create(title: string) {
+    const todo = new Todo(title);
+
+    this.todos.unshift(todo);
+  }
 }
