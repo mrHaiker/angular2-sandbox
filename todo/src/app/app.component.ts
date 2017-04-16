@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-const todos = [
+interface ITodo {
+  title: string;
+  completed: boolean;
+}
+
+const todos: ITodo[] = [
   {
     title: 'Изучить JS',
     completed: true
@@ -20,20 +25,20 @@ const todos = [
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'Angular 2Do';
-  todos = todos;
 
-  toggle(todo: any) {
+export class AppComponent {
+  title: string = 'Angular 2Do';
+  todos: ITodo[] = todos;
+
+  toggle(todo: ITodo) {
     todo.completed = !todo.completed;
   }
 
-  delete(todo:any) {
+  delete(todo: ITodo) {
     const index = this.todos.indexOf(todo);
 
     if (index > -1) {
       this.todos.splice(index, 1);
     }
-
   }
 }
