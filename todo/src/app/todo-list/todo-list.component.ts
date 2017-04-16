@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Todo} from '../shared/todo';
-import {TodoService} from "../shared/todo.service";
+import {TodoService} from '../shared/todo.service';
 
 @Component({
   selector: 'todo-list',
@@ -12,10 +12,12 @@ export class TodoListComponent implements OnInit {
 
   constructor(
     private todoService: TodoService
-  ) { }
+  ) {
+    this.todos = [];
+  }
 
   ngOnInit() {
-      this.todos = this.todoService.getTodos();
+      this.todoService.getTodos().then(todos => this.todos = todos);
   }
 
   delete(todo: Todo) {

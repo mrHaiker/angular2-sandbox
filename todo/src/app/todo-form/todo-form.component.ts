@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {TodoService} from "../shared/todo.service";
+import {TodoService} from '../shared/todo.service';
 
 @Component({
   selector: 'todo-form',
