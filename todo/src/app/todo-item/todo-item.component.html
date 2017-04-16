@@ -1,5 +1,5 @@
 <div class="todo-item" [class.completed]="todo.completed">
-    <button class="checkbox icon" (click)="toggle(todo)">
+    <button class="checkbox icon" (click)="onToggle(todo)">
         <i class="material-icons">{{ todo.completed ? 'check_box' : 'check_box_outline_blank' }}</i>
     </button>
 
