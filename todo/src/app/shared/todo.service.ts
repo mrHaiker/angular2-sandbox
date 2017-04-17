@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
 import { Http, Headers, RequestOptions} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class TodoService {
   private apiUrl = 'api/todos';
-  todos: Todo[] = [];
 
   constructor(
     private http: Http
   ) { }
 
-  getTodos(): Promise<Todo[]> {
+  getTodos(): Observable<Todo[]> {
     return this.http.get(this.apiUrl)
-      .toPromise()
-      .then(res => res.json().data)
-      .then(todos => this.todos = todos)
+      .map(res => res.json().data as Todo[])
       .catch(this.handleError);
   }
 
@@ -25,10 +24,8 @@ export class TodoService {
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers });
 
-    this.http.post(this.apiUrl, new Todo(title), options)
-      .toPromise()
-      .then(res => res.json().data)
-      .then(todo => this.todos.push(todo))
+    return this.http.post(this.apiUrl, new Todo(title), options)
+      .map(res => res.json().data)
       .catch(this.handleError);
   }
 
@@ -37,15 +34,7 @@ export class TodoService {
     const options = new RequestOptions({ headers });
     const url = `${this.apiUrl}/${todo.id}`;
 
-    this.http.delete(url, options)
-      .toPromice()
-      .then(res => {
-        const index = this.todos.indexOf(todo);
-
-        if (index > -1) {
-          this.todos.splice(index, 1);
-        }
-      })
+    return this.http.delete(url, options)
       .catch(this.handleError);
   }
 
@@ -54,16 +43,12 @@ export class TodoService {
     const options = new RequestOptions({ headers });
     const url = `${this.apiUrl}/${todo.id}`;
 
-    this.http.put(url, todo, options)
-      .toPromice()
-      .then(res => todo.completed = !todo.completed)
+    return this.http.put(url, todo, options)
       .catch(this.handleError);
-
-
   }
 
   private handleError(error: any) {
     console.error(`Произошла ошибка ${error}`);
-    return Promise.reject(error.message || error);
+    return Observable.throw(error.message || error);
   }
 }

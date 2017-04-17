@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {Todo} from "./shared/todo";
-import {todos} from "./shared/data.service";
 
 @Component({
   selector: 'app-root',
