@@ -1,0 +1,30 @@
+.list {
+  &__elem {
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: #ffffff;
+    cursor: pointer;
+    &-pic {
+      flex: 1 0 110px;
+      height: 100px;
+      margin: 10px;
+      background: no-repeat;
+      background-size: contain;
+    }
+    &-context {
+
+    }
+    &-title {
+      font-size: 18px;
+    }
+    &-desc {
+      font-size: 14px;
+      color: #333333;
+    }
+  }
+}
