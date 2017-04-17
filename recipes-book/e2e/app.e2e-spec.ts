@@ -1,6 +1,6 @@
 import { ResipeBookPage } from './app.po';
 
-describe('resipe-book App', function() {
+describe('recipes-book App', function() {
   let page: ResipeBookPage;
 
   beforeEach(() => {
