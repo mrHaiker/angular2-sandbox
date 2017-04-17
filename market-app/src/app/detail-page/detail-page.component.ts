@@ -10,7 +10,7 @@ import {PhoneService, IPhones} from "../_services/phone.service";
 })
 
 export class DetailPageComponent implements OnInit {
-  page:string;
+  page: string;
   models: any;
 
   constructor(

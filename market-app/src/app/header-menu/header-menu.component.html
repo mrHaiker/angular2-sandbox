@@ -2,8 +2,7 @@
   <li class="menu-panel__elem"
       *ngFor="let elem of list; let i = index;"
       [routerLink]="['/detail', elem.toLowerCase()]"
-      [routerLinkActive]="['active']"
-  >
+      [routerLinkActive]="['active']">
     <p class="menu-panel__context">{{ elem }}</p>
   </li>
 </ul>

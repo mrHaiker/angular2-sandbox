@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http} from '@angular/http';
 
 @Injectable()
 export class BasketService {
@@ -9,6 +9,12 @@ export class BasketService {
     private _http: Http
   ) { }
 
+  setId(num: number) {
+    this.id.push(num);
+  }
 
+  getId() {
+    return this.id;
+  }
 
 }

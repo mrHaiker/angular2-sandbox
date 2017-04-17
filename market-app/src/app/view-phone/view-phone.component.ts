@@ -1,9 +1,10 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {PhoneService, IPhones} from "../_services/phone.service";
+import {BasketService} from '../_services/basket.service';
 
 interface IAddToBasket {
-  id: number
+  id: number;
 }
 
 @Component({
@@ -19,11 +20,12 @@ export class ViewPhoneComponent implements OnInit {
   private routeParams: any;
   model: any = {};
   page: string;
-  data: boolean = false;
+  data: boolean;
 
   constructor(
     private _route: ActivatedRoute,
     private _phoneService: PhoneService,
+    private basketService: BasketService
   ) {}
 
   ngOnInit() {
@@ -32,26 +34,24 @@ export class ViewPhoneComponent implements OnInit {
       this.page = params['elem'];
     });
     this.getCurrData();
+    this.data = false;
   }
 
   getCurrData() {
     this._phoneService.getPhones()
       .then(res => {
-        let brand = res[this.routeParams.elem] as IPhones[];
+        const brand = res[this.routeParams.elem] as IPhones[];
 
         brand.forEach((val) => {
-          if (val.name == this.routeParams.model) {
+          if (val.name === this.routeParams.model) {
             this.model = val as IPhones;
             this.data = !!val;
           }
-        })
-      })
+        });
+      });
   }
 
-  /**
-   * @param {Number} id
-   * */
-  addToBasket(id) {
-    // TODO: need add functional which will be add product in basket
+  addToBasket(id: number) {
+    this.basketService.setId(id);
   }
 }
