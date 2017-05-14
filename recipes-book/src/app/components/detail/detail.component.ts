@@ -21,7 +21,6 @@ export class DetailComponent implements OnInit {
   ngOnInit():void {
     this.route.params.subscribe((params: Params) => {
       this.load = true;
-      console.log('start load');
       this.id = params['id'];
       this.getDataForId(this.id);
     })
@@ -30,9 +29,16 @@ export class DetailComponent implements OnInit {
   getDataForId(id:number):void {
     this.recipeService.getRecipe(id).subscribe(res => {
       this.load = false;
-      console.log('finish to laod');
       this.recipe = res;
     });
+  }
+
+  edit():void {
+
+  }
+
+  onDelete() {
+    // this.recipeService.deleteRecipe(this.id);
   }
 
 }

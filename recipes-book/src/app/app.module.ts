@@ -10,8 +10,6 @@ import { AddComponent } from './components/list-side/add/add.component';
 import { ElementComponent } from './components/list-side/element/element.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { NavigationComponent } from './components/detail/navigation/navigation.component';
-import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './shared/data.service';
 import {RecipeService} from './shared/recipe.service';
 
 @NgModule({
@@ -27,8 +25,7 @@ import {RecipeService} from './shared/recipe.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    AppRoutingModule
   ],
   providers: [
     RecipeService
