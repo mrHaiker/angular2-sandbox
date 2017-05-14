@@ -10,7 +10,6 @@ import { AddComponent } from './components/list-side/add/add.component';
 import { ElementComponent } from './components/list-side/element/element.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { NavigationComponent } from './components/detail/navigation/navigation.component';
-import { AddNewComponent } from './components/detail/add-new/add-new.component';
 import {InMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './shared/data.service';
 import {RecipeService} from './shared/recipe.service';
@@ -22,8 +21,7 @@ import {RecipeService} from './shared/recipe.service';
     AddComponent,
     ElementComponent,
     DetailComponent,
-    NavigationComponent,
-    AddNewComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

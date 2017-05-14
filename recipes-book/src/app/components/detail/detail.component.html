@@ -1,5 +1,14 @@
-<router-outlet>
-  <div class="text-center">
-    <h4>Select recipe</h4>
+<div class="loading loading--double detail__loader" *ngIf="load"></div>
+
+
+<div class="card" *ngIf="recipe && !load">
+  <img class="detail__image card-img-top" src="{{ recipe.image }}" alt="">
+  <div class="card-block">
+    <h3 class="card-title">{{recipe.title}}</h3>
+    <p class="card-text">{{recipe.description}}</p>
+    <div class="btn-group float-right" role="group">
+      <button type="button" class="btn btn-secondary">Edit</button>
+      <button type="button" class="btn btn-danger">Remove</button>
+    </div>
   </div>
-</router-outlet>
+</div>

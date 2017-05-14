@@ -13,7 +13,7 @@ export  class InMemoryDataService implements InMemoryDbService {
       {
         id: 2,
         image: '//img2.belonika.ru/media/thumbs/91/1a/911a2c36ca0b5bf623970cef6d455060.jpg',
-        title: 'Lorem ipsum dolor111.',
+        title: 'Lorem ipsum dolor.',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dignissimos illo incidunt,' +
         ' iure nostrum praesentium quibusdam rem sed?'
       }

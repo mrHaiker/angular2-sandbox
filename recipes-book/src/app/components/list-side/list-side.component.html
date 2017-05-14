@@ -2,8 +2,10 @@
 <hr>
 
 <div class="list" *ngFor="let recipe of recipes">
-  <div class="list__elem">
-    <div class="list__elem-pic"></div>
+  <div class="list__elem" [routerLink]="['recipe', recipe.id]">
+    <div class="list__elem-pic">
+      <img src="{{ recipe.image }}" alt="image">
+    </div>
     <div class="list__elem-context">
       <h3 class="list__elem-title">{{ recipe.title }}</h3>
       <p class="list__elem-desc">{{ recipe.description }}</p>
