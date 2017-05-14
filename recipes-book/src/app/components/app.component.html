@@ -1,6 +1,7 @@
 <header class="header">
   <div class="container">
     <a href="/" class="header__logo">Recipes.book</a>
+    <a class="btn btn-link float-right text-white" href="//github.com/mrHaiker/angular2-sandbox/tree/master/recipes-book">View source on GitHub</a>
   </div>
 </header>
 
@@ -8,6 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
+        <div class="btn btn btn-success" [routerLink]="['add']">Add new recipe</div>
         <list-side></list-side>
       </div>
       <div class="col">

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './components/app.component';
 import { ListSideComponent } from './components/list-side/list-side.component';
-import { AddComponent } from './components/list-side/add/add.component';
+import { AddComponent } from './components/add/add.component';
 import { ElementComponent } from './components/list-side/element/element.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { NavigationComponent } from './components/detail/navigation/navigation.component';

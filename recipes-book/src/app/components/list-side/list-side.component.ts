@@ -8,7 +8,7 @@ import {Recipe} from '../../shared/recipe';
   styleUrls: ['./list-side.component.scss']
 })
 export class ListSideComponent implements OnInit {
-  recipes: Recipe[];
+  recipes: Recipe[] = [];
 
   constructor(
     private recipeService: RecipeService

@@ -1,0 +1,26 @@
+<p>Please enter some information</p>
+
+<div class="card">
+  <img class="card-img-top" src="{{recipe.image}}" alt="pic">
+  <div class="card-block">
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">url</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" [(ngModel)]="recipe.image">
+      </div>
+      <p class="add__image_description">You can change the url of the picture, but for convenience I'll leave the standard</p>
+      <br>
+
+      <label for="title" class="form-control-label">Title</label>
+      <input type="text" class="form-control" name="title" id="title" [(ngModel)]="recipe.title" required>
+      <br>
+
+      <label for="description" class="form-control-label">Description</label>
+      <textarea type="text" class="form-control" name="title" id="description" [(ngModel)]="recipe.description" required></textarea>
+    </div>
+    <div class="btn-group float-right">
+      <button class="btn btn-secondary" (click)="clearRecipe()">Clear</button>
+      <button class="btn btn-primary" (click)="addNew()">Save</button>
+    </div>
+  </div>
+</div>
