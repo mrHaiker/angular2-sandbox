@@ -22,7 +22,7 @@ export class RecipeService {
   ) { }
 
   getServerUrl(id:any = ''):string {
-    return `${this.url}/${this.dbName}/${this.collections}?apiKey=${this.key}`;
+    return `${this.url}/${this.dbName}/${this.collections}/${id}/?apiKey=${this.key}`;
   }
 
   getRecipes(): Observable<Recipe[]> {
@@ -33,9 +33,10 @@ export class RecipeService {
     return this.http.get(this.getServerUrl(id)).map(res => res.json() as Recipe);
   }
 
-  // deleteRecipe(id: number) {
-  //   this.http.delete(`${this.apiUrl}/${id}`);
-  // }
+  //TODO: Check this snippet
+  deleteRecipe(id: number) {
+    this.http.delete(this.getServerUrl(id)).map(res => res.json() as Recipe).subscribe(res => console.log(res));
+  }
   //
   // editRecipe(id: number): Observable<Recipe> {
   //   return this.http.patch(this.apiUrl, id)

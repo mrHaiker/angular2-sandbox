@@ -9,7 +9,7 @@ import {Recipe} from "../../shared/recipe";
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  id: number;
+  _id: number;
   recipe: Recipe;
   load: boolean;
 
@@ -21,12 +21,12 @@ export class DetailComponent implements OnInit {
   ngOnInit():void {
     this.route.params.subscribe((params: Params) => {
       this.load = true;
-      this.id = params['id'];
-      this.getDataForId(this.id);
+      this._id = params['id'];
+      this.getDataById(this._id);
     })
   }
 
-  getDataForId(id:number):void {
+  getDataById(id:number):void {
     this.recipeService.getRecipe(id).subscribe(res => {
       this.load = false;
       this.recipe = res;
@@ -38,7 +38,7 @@ export class DetailComponent implements OnInit {
   }
 
   onDelete() {
-    // this.recipeService.deleteRecipe(this.id);
+    this.recipeService.deleteRecipe(this._id);
   }
 
 }

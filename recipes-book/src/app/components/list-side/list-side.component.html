@@ -2,7 +2,7 @@
 <hr>
 
 <div class="list" *ngFor="let recipe of recipes">
-  <div class="list__elem" [routerLink]="['recipe', recipe.id]">
+  <div class="list__elem" [routerLink]="['recipe', recipe._id]">
     <div class="list__elem-pic">
       <img src="{{ recipe.image }}" alt="image">
     </div>

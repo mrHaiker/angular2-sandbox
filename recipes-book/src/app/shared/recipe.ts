@@ -1,5 +1,5 @@
 export class Recipe {
-  id: number;
+  _id: number;
 
   constructor(
     public image: string,
