@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -19,6 +19,7 @@ export class RecipeService {
   private apiUrl: string = 'api/recipes';
 
   collectionsLength: number;
+  updateRecipes: EventEmitter<boolean> = new EventEmitter();
 
   constructor(
     private http: Http,
@@ -30,34 +31,38 @@ export class RecipeService {
   }
 
   getRecipes(): Observable<Recipe[]> {
-    return this.http.get(this.getServerUrl()).map(res => {
-      this.collectionsLength = res.json().length;
-      console.log(this.collectionsLength);
-      return res.json() as Recipe[]
-    })
+    return this.http.get(this.getServerUrl()).map(res => res.json() as Recipe[])
   }
 
   getRecipe(id: number): Observable<Recipe> {
     return this.http.get(this.getServerUrl(id)).map(res => res.json() as Recipe);
   }
 
-  //TODO: Check this snippet
-  deleteRecipe(id: number) {
-    this.http.delete(this.getServerUrl(id)).map(res => res.json() as Recipe).subscribe(res => console.log(res));
-  }
-
-  addRecipe(data: Recipe): Observable<Recipe> {
-    data._id = this.collectionsLength + 1;
-    return this.http.post(this.getServerUrl(), data).map(res => {
-      this.router.navigate(['/']).then(() => {
-        console.log('navigated');
-        //TODO: Need refresh data after saving on server
-        //TODO: Need set uniq id
-        this.getRecipes()
-      });
+  deleteRecipe(id: number): Observable<Recipe> {
+    // TODO: don`t work remove action
+    return this.http.delete(this.getServerUrl(id)).map(res => {
+      console.log('delete');
+      this.updateRecipes.emit(true);
       return res.json() as Recipe
     })
   }
+
+  addRecipe(data: Recipe): Observable<Recipe> {
+    data._id = this.getRandomId();
+    return this.http.post(this.getServerUrl(), data).map(res => {
+      this.updateRecipes.emit(true);
+      return res.json() as Recipe;
+    })
+  }
+
+  getRandomId():number {
+    return Number((Math.random()*1000).toFixed(0));
+  }
+
+  needUpdateAllData() {
+    return this.updateRecipes;
+  }
+
   //
   // editRecipe(id: number): Observable<Recipe> {
   //   return this.http.patch(this.apiUrl, id)

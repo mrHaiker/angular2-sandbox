@@ -20,8 +20,6 @@ export class AddComponent implements OnInit {
   }
 
   addNew() {
-    this.recipeService.addRecipe(this.recipe).subscribe(() => {
-      console.log('saved');
-    })
+    this.recipeService.addRecipe(this.recipe);
   }
 }

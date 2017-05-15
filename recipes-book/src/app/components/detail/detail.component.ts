@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ActivatedRoute, Params} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {RecipeService} from "../../shared/recipe.service";
 import {Recipe} from "../../shared/recipe";
 
@@ -15,10 +15,11 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private recipeService: RecipeService
+    private recipeService: RecipeService,
+    private router: Router
   ) { }
 
-  ngOnInit():void {
+  ngOnInit() {
     this.route.params.subscribe((params: Params) => {
       this.load = true;
       this._id = params['id'];
@@ -38,6 +39,7 @@ export class DetailComponent implements OnInit {
   }
 
   onDelete() {
+    console.log('delete first');
     this.recipeService.deleteRecipe(this._id);
   }
 

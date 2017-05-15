@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RecipeService} from '../../shared/recipe.service';
 import {Recipe} from '../../shared/recipe';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'list-side',
@@ -11,11 +12,24 @@ export class ListSideComponent implements OnInit {
   recipes: Recipe[] = [];
 
   constructor(
-    private recipeService: RecipeService
+    private recipeService: RecipeService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.recipeService.getRecipes().subscribe(res => this.recipes = res);
+    this.getRecipes();
+    this.catchRefreshEvent();
   }
 
+  catchRefreshEvent() {
+    this.recipeService.needUpdateAllData().subscribe(() => {
+      this.router.navigate(['/']).then(() => {
+        this.getRecipes();
+      })
+    })
+  }
+
+  getRecipes() {
+    this.recipeService.getRecipes().subscribe(res => this.recipes = res);
+  }
 }
