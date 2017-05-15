@@ -3,12 +3,23 @@
 
 <div class="card" *ngIf="recipe && !load">
   <img class="detail__image card-img-top" src="{{ recipe.image }}" alt="">
-  <div class="card-block">
+  <div class="card-block" *ngIf="!edit">
     <h3 class="card-title">{{recipe.title}}</h3>
     <p class="card-text">{{recipe.description}}</p>
     <div class="btn-group float-right" role="group">
-      <button type="button" class="btn btn-secondary" (click)="edit()" >Edit</button>
+      <button type="button" class="btn btn-secondary" (click)="edit = true" >Edit</button>
       <button type="button" class="btn btn-danger" (click)="onDelete()">Remove</button>
+    </div>
+  </div>
+
+  <div class="card-block" *ngIf="edit">
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]="recipe.title" placeholder="Title"><br>
+      <textarea class="form-control" [(ngModel)]="recipe.description" placeholder="Title"></textarea><br>
+      <div class="btn-group float-right">
+        <button class="btn btn-link" (click)="edit = false">Back</button>
+        <button class="btn btn-success" (click)="saveEdit()">Save</button>
+      </div>
     </div>
   </div>
 </div>

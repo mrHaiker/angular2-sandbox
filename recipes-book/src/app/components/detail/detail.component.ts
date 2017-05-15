@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {RecipeService} from "../../shared/recipe.service";
 import {Recipe} from "../../shared/recipe";
@@ -12,11 +12,11 @@ export class DetailComponent implements OnInit {
   _id: number;
   recipe: Recipe;
   load: boolean;
+  edit: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
-    private recipeService: RecipeService,
-    private router: Router
+    private recipeService: RecipeService
   ) { }
 
   ngOnInit() {
@@ -34,12 +34,12 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  edit():void {
-
+  saveEdit():void {
+    this.recipeService.addRecipe(this.recipe, this._id).subscribe();
   }
 
   onDelete() {
-    this.recipeService.deleteRecipe(this._id).subscribe()
+    this.recipeService.deleteRecipe(this._id).subscribe();
   }
 
 }

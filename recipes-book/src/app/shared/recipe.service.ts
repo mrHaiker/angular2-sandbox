@@ -14,7 +14,6 @@ export class RecipeService {
   private key: string = "ESLgl33hBabfeD3RHmoYmtcYoroLeSnJ";
   private apiUrl: string = 'api/recipes';
 
-  collectionsLength: number;
   updateRecipes: EventEmitter<boolean> = new EventEmitter();
 
   constructor(
@@ -34,23 +33,22 @@ export class RecipeService {
   }
 
   deleteRecipe(id: number): Observable<Recipe> {
-    // TODO: don`t work remove action
     return this.http.delete(this.getServerUrl(id)).map(res => {
-      console.log('delete');
       this.updateRecipes.emit(true);
       return res.json() as Recipe
     })
   }
 
-  addRecipe(data: Recipe): Observable<Recipe> {
-    data._id = this.getRandomId();
+  addRecipe(data: Recipe, id?:number): Observable<Recipe> {
+    if (!id) data._id = this.getRandomId();
+    else data._id = Number(id);
     return this.http.post(this.getServerUrl(), data).map(res => {
       this.updateRecipes.emit(true);
       return res.json() as Recipe;
     })
   }
 
-  getRandomId():number {
+  private getRandomId(): number {
     return Number((Math.random()*1000).toFixed(0));
   }
 
@@ -58,9 +56,10 @@ export class RecipeService {
     return this.updateRecipes;
   }
 
-  //
-  // editRecipe(id: number): Observable<Recipe> {
-  //   return this.http.patch(this.apiUrl, id)
-  //     .map(res => res.json() as Recipe)
-  // }
+  editRecipe(data: Recipe, id: number): Observable<Recipe> {
+    return this.http.patch(this.getServerUrl(), data).map(res => {
+      this.updateRecipes.emit(true);
+      return res.json() as Recipe
+    })
+  }
 }
