@@ -39,8 +39,7 @@ export class DetailComponent implements OnInit {
   }
 
   onDelete() {
-    console.log('delete first');
-    this.recipeService.deleteRecipe(this._id);
+    this.recipeService.deleteRecipe(this._id).subscribe()
   }
 
 }

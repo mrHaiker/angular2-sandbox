@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Recipe} from "../../shared/recipe";
 import {RecipeService} from "../../shared/recipe.service";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add',
@@ -20,6 +19,6 @@ export class AddComponent implements OnInit {
   }
 
   addNew() {
-    this.recipeService.addRecipe(this.recipe);
+    this.recipeService.addRecipe(this.recipe).subscribe()
   }
 }

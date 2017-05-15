@@ -10,14 +10,10 @@ import {Observable} from "rxjs/Observable";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'app works!';
   recipe: Recipe;
 
-  constructor(
-    private route: ActivatedRoute
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.params.map(p => console.log(p))
   }
 }

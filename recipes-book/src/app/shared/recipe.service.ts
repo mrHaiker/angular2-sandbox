@@ -6,10 +6,6 @@ import 'rxjs/add/operator/catch';
 import {Http} from '@angular/http';
 import {Recipe} from './recipe';
 
-import 'rxjs/add/operator/toPromise';
-import {Router} from "@angular/router";
-// Service that work with recipe data
-
 @Injectable()
 export class RecipeService {
   private url: string = "https://api.mongolab.com/api/1/databases";
@@ -22,8 +18,7 @@ export class RecipeService {
   updateRecipes: EventEmitter<boolean> = new EventEmitter();
 
   constructor(
-    private http: Http,
-    private router: Router
+    private http: Http
   ) { }
 
   getServerUrl(id:any = ''):string {
