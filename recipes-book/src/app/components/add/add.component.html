@@ -1,26 +1,30 @@
 <p>Please enter some information</p>
 
 <div class="card">
-  <img class="card-img-top" src="{{recipe.image}}" alt="pic">
+  <img class="card-img-top" src="{{recipe.image}}" alt="pic" *ngIf="recipe.image">
   <div class="card-block">
-    <div class="form-group">
+    <form class="form-group" #formAdd="ngForm">
       <div class="input-group">
         <span class="input-group-addon" id="basic-addon1">url</span>
-        <input type="text" class="form-control" aria-describedby="basic-addon1" [(ngModel)]="recipe.image">
+        <input name="image" type="text" class="form-control" aria-describedby="basic-addon1" [(ngModel)]="recipe.image" #image="ngModel" required>
       </div>
       <p class="add__image_description">You can change the url of the picture, but for convenience I'll leave the standard</p>
+      <p class="alert alert-danger mt-2" *ngIf="image.errors && image.dirty">Field is required</p>
       <br>
 
       <label for="title" class="form-control-label">Title</label>
-      <input type="text" class="form-control" name="title" id="title" [(ngModel)]="recipe.title" required>
+      <input type="text" class="form-control" name="title" id="title" [(ngModel)]="recipe.title" required #title="ngModel" minlength="4">
+      <p class="alert alert-danger mt-2" *ngIf="title.errors && title.dirty">Field is required</p>
       <br>
 
       <label for="description" class="form-control-label">Description</label>
-      <textarea type="text" class="form-control" name="title" id="description" [(ngModel)]="recipe.description" required></textarea>
-    </div>
+      <textarea type="text" class="form-control" name="description" id="description" [(ngModel)]="recipe.description" required #description="ngModel"></textarea>
+      <p class="alert alert-danger mt-2" *ngIf="description.errors && description.dirty">Field is required</p>
+
+    </form>
     <div class="btn-group float-right">
       <button class="btn btn-secondary" (click)="clearRecipe()">Clear</button>
-      <button class="btn btn-primary" (click)="addNew()">Save</button>
+      <button class="btn btn-primary" (click)="addNew()" [disabled]="!formAdd.form.valid">Save</button>
     </div>
   </div>
 </div>

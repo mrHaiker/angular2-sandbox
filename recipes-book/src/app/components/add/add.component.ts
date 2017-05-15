@@ -15,10 +15,18 @@ export class AddComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.recipe = new Recipe('//vlunch.ru/foto/kartoshka-otvarnaya-i-obzharennaya-v-masle-2.jpg', '', '');
+    this.recipe = this.getDefaultRecipe();
   }
 
   addNew() {
     this.recipeService.addRecipe(this.recipe).subscribe()
+  }
+
+  clearRecipe() {
+    this.recipe = this.getDefaultRecipe();
+  }
+
+  getDefaultRecipe(): Recipe {
+    return new Recipe('//vlunch.ru/foto/kartoshka-otvarnaya-i-obzharennaya-v-masle-2.jpg', '', '')
   }
 }
