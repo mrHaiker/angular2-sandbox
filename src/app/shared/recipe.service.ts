@@ -49,7 +49,7 @@ export class RecipeService {
   }
 
   private getRandomId(): number {
-    return Number((Math.random()*1000).toFixed(0));
+    return Number((Math.random() * 1000).toFixed(0));
   }
 
   needUpdateAllData() {
