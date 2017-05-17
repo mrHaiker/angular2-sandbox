@@ -40,7 +40,7 @@ AppRoutingModule = __decorate([
     })
 ], AppRoutingModule);
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/app-routing.module.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/app-routing.module.js.map
 
 /***/ }),
 
@@ -107,7 +107,7 @@ AppModule = __decorate([
     })
 ], AppModule);
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/app.module.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/app.module.js.map
 
 /***/ }),
 
@@ -143,7 +143,7 @@ AppComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], AppComponent);
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/app.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/app.component.js.map
 
 /***/ }),
 
@@ -179,7 +179,7 @@ NavigationComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], NavigationComponent);
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/navigation.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/navigation.component.js.map
 
 /***/ }),
 
@@ -215,7 +215,7 @@ ElementComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], ElementComponent);
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/element.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/element.component.js.map
 
 /***/ }),
 
@@ -273,7 +273,7 @@ ListSideComponent = __decorate([
 ], ListSideComponent);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/list-side.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/list-side.component.js.map
 
 /***/ }),
 
@@ -291,7 +291,7 @@ var Recipe = (function () {
     return Recipe;
 }());
 
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/recipe.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/recipe.js.map
 
 /***/ }),
 
@@ -308,7 +308,7 @@ var Recipe = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/environment.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/environment.js.map
 
 /***/ }),
 
@@ -553,7 +553,7 @@ RecipeService = __decorate([
 ], RecipeService);
 
 var _a;
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/recipe.service.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/recipe.service.js.map
 
 /***/ }),
 
@@ -591,7 +591,7 @@ var AddComponent = (function () {
         this.recipe = this.getDefaultRecipe();
     };
     AddComponent.prototype.getDefaultRecipe = function () {
-        return new __WEBPACK_IMPORTED_MODULE_1__shared_recipe__["a" /* Recipe */]('//vlunch.ru/foto/kartoshka-otvarnaya-i-obzharennaya-v-masle-2.jpg', '', '');
+        return new __WEBPACK_IMPORTED_MODULE_1__shared_recipe__["a" /* Recipe */]('//woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '');
     };
     return AddComponent;
 }());
@@ -605,7 +605,7 @@ AddComponent = __decorate([
 ], AddComponent);
 
 var _a;
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/add.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/add.component.js.map
 
 /***/ }),
 
@@ -668,7 +668,7 @@ DetailComponent = __decorate([
 ], DetailComponent);
 
 var _a, _b;
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/detail.component.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/detail.component.js.map
 
 /***/ }),
 
@@ -703,7 +703,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/main.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/main.js.map
 
 /***/ })
 

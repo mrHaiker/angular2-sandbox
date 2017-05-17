@@ -1179,7 +1179,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  * Needed for: All but Chrome, Firefox, Edge, IE11 and Safari 10
  */
 // import 'intl';  // Run `npm install --save intl`.
-//# sourceMappingURL=C:/Users/Sergey.Dzyuba/Desktop/angular2-sandbox/recipes-book/src/polyfills.js.map
+//# sourceMappingURL=C:/Users/Сергей/WebstormProjects/angular2-sandbox/recipes-book/src/polyfills.js.map
 
 /***/ }),
 /* 92 */,

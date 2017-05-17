@@ -27,6 +27,6 @@ export class AddComponent implements OnInit {
   }
 
   getDefaultRecipe(): Recipe {
-    return new Recipe('//vlunch.ru/foto/kartoshka-otvarnaya-i-obzharennaya-v-masle-2.jpg', '', '')
+    return new Recipe('//woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '')
   }
 }
