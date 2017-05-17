@@ -591,7 +591,7 @@ var AddComponent = (function () {
         this.recipe = this.getDefaultRecipe();
     };
     AddComponent.prototype.getDefaultRecipe = function () {
-        return new __WEBPACK_IMPORTED_MODULE_1__shared_recipe__["a" /* Recipe */]('//woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '');
+        return new __WEBPACK_IMPORTED_MODULE_1__shared_recipe__["a" /* Recipe */]('http://woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '');
     };
     return AddComponent;
 }());

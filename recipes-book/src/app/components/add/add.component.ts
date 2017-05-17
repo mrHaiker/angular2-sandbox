@@ -27,6 +27,6 @@ export class AddComponent implements OnInit {
   }
 
   getDefaultRecipe(): Recipe {
-    return new Recipe('//woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '')
+    return new Recipe('http://woman365.ru/wp-content/uploads/2015/07/yaichnica-boltunya-boltunya-na-tarelke.jpg', '', '')
   }
 }
