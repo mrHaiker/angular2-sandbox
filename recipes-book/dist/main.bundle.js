@@ -430,7 +430,7 @@ module.exports = "<p>Please enter some information</p>\r\n\r\n<div class=\"card\
 /***/ 175:
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"header\">\r\n  <div class=\"container\">\r\n    <a href=\"/\" class=\"header__logo\">Recipes.book</a>\r\n    <a class=\"btn btn-link float-right text-white\" href=\"//github.com/mrHaiker/angular2-sandbox/tree/master/recipes-book\">View source on GitHub</a>\r\n  </div>\r\n</header>\r\n\r\n<section class=\"main\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <div class=\"btn btn btn-success\" [routerLink]=\"['add']\">Add new recipe</div>\r\n        <list-side></list-side>\r\n      </div>\r\n      <div class=\"col\">\r\n        <router-outlet>\r\n          <h5 class=\"text-center\">Select recipe</h5>\r\n        </router-outlet>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+module.exports = "<header class=\"header\">\r\n  <div class=\"container\">\r\n    <a href=\"/\" class=\"header__logo\">Recipes.book</a>\r\n    <a class=\"btn btn-link float-right text-white\" href=\"//github.com/mrHaiker/angular2-sandbox/tree/master/recipes-book\">View source on GitHub</a>\r\n  </div>\r\n</header>\r\n\r\n<section class=\"main\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col\">\r\n        <div class=\"btn btn btn-success\" [routerLink]=\"['add']\">Add new recipe</div>\r\n        <list-side></list-side>\r\n      </div>\r\n      <div class=\"col\">\r\n        <router-outlet></router-outlet>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
 
 /***/ }),
 
